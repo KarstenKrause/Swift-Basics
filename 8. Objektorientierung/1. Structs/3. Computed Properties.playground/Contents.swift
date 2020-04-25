@@ -2,6 +2,7 @@
 // Dazu benötigt dieser Codeblock einen Return-Wert vom Typ der computed-property
 
 
+// MARK: - Beispiel 1
 struct Smartphone {
     var name: String
     var kosten: Double
@@ -22,3 +23,18 @@ iPhoneX.kostenStatus
 
 let iPhoneSE = Smartphone(name: "iPhoneSE", kosten: 450.0)
 iPhoneSE.kostenStatus
+
+
+// MARK: - Beispiel 2
+struct Person {
+    let vorname: String
+    let nachname: String
+    
+    // Man kann auch direkt die Propertie über einen Getter setzen!
+    var name: String {
+        get { return "\(vorname) \(nachname)" }
+    }
+}
+
+let person = Person(vorname: "Karsten", nachname: "Krause")
+print(person.name)
